@@ -5,34 +5,17 @@ using System.Text;
 
 namespace DesignPatterns.Services
 {
-	class ProgramFactory
+	public class ProgramFactory
 	{
 		LoggerService _logger;
-		InputManagerService _inputManager;
-		JSONManagerService _JSONManager;
 
-		public ProgramFactory(LoggerService logger, InputManagerService inputManager, JSONManagerService jSONManager)
+		public ProgramFactory(LoggerService logger)
 		{
 			_logger = logger;
-			_inputManager = inputManager;
-			_JSONManager = jSONManager;
 		}
 
-		public IProgram Select()
+		public IProgram Create(string programName)
 		{
-			var json = _JSONManager.Read("./Data/Programs.json");
-			var programsList = json["Programs"].ToObject<string[]>();
-			var lastIndex = programsList.Length - 1;
-			var count = 0;
-
-			_logger.Log($"Select an option between {0} and {lastIndex}:\n");
-
-			foreach (var item in programsList)
-				_logger.Log($"{count}: {programsList[count++]}");
-
-			var response = _inputManager.RequestInt(min: 0, max: lastIndex);
-			var programName = programsList[response];
-
 			try
 			{
 				var type = Type.GetType($"DesignPatterns.Modules.{programName}");

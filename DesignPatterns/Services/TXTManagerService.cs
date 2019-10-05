@@ -1,15 +1,12 @@
-﻿using System.IO;
+using System.IO;
 using Newtonsoft.Json.Linq;
 
 namespace DesignPatterns.Services
 {
-	public class JSONManagerService : IFileService
+	public class TXTManagerService : IFileService
 	{
-		public object Read(string filePath)
-		{
-			var json = File.ReadAllText(filePath);
-			return JObject.Parse(json);
-		}
+		public object Read(string filePath) =>
+			File.ReadAllText(filePath);
 
 		public void Write(string filePath, object document)
 		{

@@ -1,0 +1,40 @@
+
+This is the adapter design pattern example program!
+
+public interface IService
+{
+	void Run(string[] args);
+}
+
+public interface IJSONService
+{
+	JObject PostJSON(string path);
+}
+
+public class Client
+{
+	public Client(IService service);
+	void Launch(string[] args);
+}
+
+public class ClientServeAdapter : IService
+{
+	IJSONService _service;
+
+	public ClientServeAdapter(IJSONService service)
+	{
+			_service = service;
+	}
+
+	public void Run(string[] args)
+	{
+		var filePath = args[0];
+
+		if (File.Exists(filePath)) 
+		{
+			var json = _service.PostJSON(filePath);
+			Console.WriteLine(json.ToString());
+		}
+		else Console.WriteLine($"File not found: {filePath}");
+	}
+}

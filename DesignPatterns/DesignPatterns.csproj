@@ -8,10 +8,14 @@
 
   <ItemGroup>
     <None Remove="Data\programs.json" />
+    <None Remove="Data\Adapter.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Data\programs.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Adapter.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

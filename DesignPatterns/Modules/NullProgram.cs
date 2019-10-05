@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.Modules
 {
-	internal class NullProgram : IProgram
+	public class NullProgram : IProgram
 	{
 		LoggerService _logger;
 		string _programName;

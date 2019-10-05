@@ -1,11 +1,9 @@
 ﻿using DesignPatterns.Services;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using DesignPatterns.Modules.Adapter;
 
 namespace DesignPatterns.Modules
 {
-	class AdapterProgram : IProgram
+	public class AdapterProgram : IProgram
 	{
 		LoggerService _logger;
 
@@ -16,7 +14,10 @@ namespace DesignPatterns.Modules
 
 		public void Run()
 		{
-			_logger.Log("This is the adapter design pattern example program!");
+			var service = new Service();
+			var adapter = new ClientServeAdapter(service);
+			var client = new Client(adapter);
+			client.Launch(new string[] { "Data/Adapter.txt" });
 		}
 	}
 }

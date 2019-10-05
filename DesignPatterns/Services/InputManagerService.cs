@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.Services
 {
-	internal class InputManagerService
+	public class InputManagerService
 	{
 		LoggerService _logger;
 
@@ -11,7 +11,7 @@ namespace DesignPatterns.Services
 			_logger = logger;
 		}
 
-		internal int RequestInt(int min, int max)
+		public int RequestInt(int min, int max)
 		{
 			int option = min - 1;
 			while (option < min || option > max)

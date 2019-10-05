@@ -4,18 +4,18 @@ using System.Text;
 
 namespace DesignPatterns.Services
 {
-	class LoggerService
+	public class LoggerService
 	{
 		readonly string[] _messageType =
 			{ "", "Info: ", "Warning: ", "Error: " };
 
-		internal void Log(string message, MessageType type = MessageType.Normal)
+		public void Log(string message, MessageType type = MessageType.Normal)
 		{
 			Console.WriteLine("{0}{1}", _messageType[(int)type], message);
 		}
 	}
 
-	enum MessageType
+	public enum MessageType
 	{
 		Normal = 0,
 		Info = 1,
