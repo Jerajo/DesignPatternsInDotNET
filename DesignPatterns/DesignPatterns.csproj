@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>DesignPatterns</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\programs.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\programs.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Modules\Bridge\" />
+    <Folder Include="Modules\Builder\" />
+    <Folder Include="Modules\Chain of Responsibility\" />
+    <Folder Include="Modules\Command\" />
+    <Folder Include="Modules\Composite\" />
+    <Folder Include="Modules\Decorator\" />
+    <Folder Include="Modules\Event\" />
+    <Folder Include="Modules\Facade\" />
+    <Folder Include="Modules\Factory\" />
+    <Folder Include="Modules\Flyweight\" />
+    <Folder Include="Modules\Interpreter\" />
+    <Folder Include="Modules\Iterator\" />
+    <Folder Include="Modules\Lazy Load\" />
+    <Folder Include="Modules\Mediator\" />
+    <Folder Include="Modules\Memento\" />
+    <Folder Include="Modules\Model View Presenter\" />
+    <Folder Include="Modules\Model View ViewModel\" />
+    <Folder Include="Modules\Null Object\" />
+    <Folder Include="Modules\Observer\" />
+    <Folder Include="Modules\Prototype\" />
+    <Folder Include="Modules\Proxy\" />
+    <Folder Include="Modules\Repository\" />
+    <Folder Include="Modules\Singleton\" />
+    <Folder Include="Modules\Service Locator\" />
+    <Folder Include="Modules\State\" />
+    <Folder Include="Modules\Strategy\" />
+    <Folder Include="Modules\Template\" />
+    <Folder Include="Modules\Unit of Work\" />
+    <Folder Include="Modules\Visitor\" />
+    <Folder Include="Modules\Rules\" />
+    <Folder Include="Modules\Specification\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+</Project>
